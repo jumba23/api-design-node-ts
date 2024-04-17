@@ -9,3 +9,5 @@ app.get("/", (req, res) => {
     message: "Hello World!",
   });
 });
+
+module.export = app;
