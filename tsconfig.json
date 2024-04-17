@@ -1,0 +1,9 @@
+{
+  "compileOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    // "strict": true, // strict mode is not recommended for beginners
+    "lib": ["esnext"],
+    "esModuleInterop": true
+  }
+}
