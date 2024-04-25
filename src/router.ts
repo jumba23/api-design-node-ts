@@ -20,3 +20,12 @@ router.get("/update/:id", () => {});
 router.post("/update", () => {});
 router.put("/update/:id", () => {});
 router.delete("/update/:id", () => {});
+
+/**
+ * Update Point
+ */
+router.get("/updatepoint", () => {});
+router.get("/updatepoint/:id", () => {});
+router.post("/updatepoint", () => {});
+router.put("/updatepoint/:id", () => {});
+router.delete("/updatepoint/:id", () => {});
