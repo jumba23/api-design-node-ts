@@ -1,9 +1,13 @@
 {
-  "compileOptions": {
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    // "strict": true,
     "sourceMap": true,
     "outDir": "dist",
-    // "strict": true, // strict mode is not recommended for beginners
-    "lib": ["esnext"],
-    "esModuleInterop": true
-  }
+    "lib": ["esnext"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
