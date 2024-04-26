@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 // This function will compare the password with the hash
-export const comparePassword = async (password, hash) => {
+export const comparePasswords = async (password, hash) => {
   return await bcrypt.compare(password, hash);
 };
 
