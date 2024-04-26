@@ -21,12 +21,15 @@ export const signin = async (req, res) => {
     },
   });
 
+  // If the user exists, compare the password
+  const isValid = await comparePasswords(req.body.password, user.password);
+
   // If the user does not exist, return 401
-  if (!user) {
+  if (!isValid) {
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
 
-  // If the user exists, compare the password
-  const isValid = await comparePasswords(req.body.password, user.password);
+  const token = createJWT(user);
+  res.json({ token });
 };
