@@ -18,6 +18,7 @@ export const protect = (req, res, next) => {
     res.status(401).json({ message: "not valid token" });
   }
 
+  // try-catch will catch the error if the token is invalid and NOT break the server
   try {
     const user = jwt.verify(token, process.env.JWT_SECRET);
     req.user = user;
