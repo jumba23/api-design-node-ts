@@ -12,7 +12,7 @@ router.get("/product", (req, res) => {
 });
 router.get("/product/:id", () => {});
 router.post("/product", () => {});
-router.put("/product/:id", body('name'), (req, res) => {
+router.put("/product/:id", body("name").isString(), (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
