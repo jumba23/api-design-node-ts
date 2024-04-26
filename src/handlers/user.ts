@@ -14,16 +14,19 @@ export const createNewUser = async (req, res) => {
 };
 
 export const signin = async (req, res) => {
+  // Find the user
   const user = await prisma.user.findUnique({
     where: {
       username: req.body.username,
     },
   });
 
+  // If the user does not exist, return 401
   if (!user) {
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
 
+  // If the user exists, compare the password
   const isValid = await comparePasswords(req.body.password, user.password);
 };
