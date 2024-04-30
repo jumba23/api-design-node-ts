@@ -37,7 +37,7 @@ router.put(
   "/update/:id",
   body("title").optional,
   body("body").optional,
-  oneOf([body("IN_PROGRESS")]),
+  oneOf([body("IN_PROGRESS"), body("SHIPPED"), body("DEPRECATED")]),
   body("version").optional,
 
   () => {}
