@@ -37,8 +37,8 @@ router.put(
   body("title").optional,
   body("body").optional,
   body("status").optional,
-  body("version"),
-  asset(),
+  body("version").optional,
+
   () => {}
 );
 router.delete("/update/:id", () => {});
