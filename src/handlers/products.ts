@@ -50,4 +50,6 @@ export const updateProduct = async (req, res) => {
       name: req.body.name,
     },
   });
+
+  res.json({ data: update });
 };
