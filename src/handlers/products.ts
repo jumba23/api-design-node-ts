@@ -59,8 +59,15 @@ export const updateProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
   const deleted = await prisma.product.delete({
     where: {
-      id: req.params.id,
-      belongsToId: req.user.id,
+      //   id: req.params.id,
+      //   belongsToId: req.user.id,
+
+      // after adding @@unique([id, belongsToId]) to the schema.prisma file
+      // we can use the following code to delete a product
+      id_belongsToId: {
+        id: req.params.id,
+        belongsToId: req.user.id,
+      },
     },
   });
 
