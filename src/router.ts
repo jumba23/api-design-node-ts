@@ -14,6 +14,7 @@ router.get("/product", (req, res) => {
 router.get("/product/:id", () => {});
 router.post(
   "/product",
+  // middleware
   body("name").isString(),
   handleInputErrors,
   (req, res) => {}
