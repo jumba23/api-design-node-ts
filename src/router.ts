@@ -12,7 +12,12 @@ router.get("/product", (req, res) => {
   res.json({ message: "Hello World" });
 });
 router.get("/product/:id", () => {});
-router.post("/product", () => {});
+router.post(
+  "/product",
+  body("name").isString(),
+  handleInputErrors,
+  (req, res) => {}
+);
 router.put(
   "/product/:id",
   body("name").isString(),
