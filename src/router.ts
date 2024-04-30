@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { body, oneOf } from "express-validator";
 import { handleInputErrors } from "./modules/middleware";
+import { getOneProduct } from "./handlers/products";
 
 const router = Router();
 
@@ -8,9 +9,7 @@ const router = Router();
  * Product routes
  */
 
-router.get("/product", (req, res) => {
-  res.json({ message: "Hello World" });
-});
+router.get("/product", getOneProduct);
 router.get("/product/:id", () => {});
 router.post(
   "/product",

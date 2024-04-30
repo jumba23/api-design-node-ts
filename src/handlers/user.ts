@@ -1,6 +1,5 @@
 import prisma from "../db";
 import { comparePasswords, createJWT, hashPassword } from "../modules/auth";
-\
 
 // Create a new user
 export const createNewUser = async (req, res) => {
