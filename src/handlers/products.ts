@@ -1,5 +1,6 @@
 import prisma from "../db";
 
+// Get all products
 export const getProducts = async (req, res) => {
   const user = await prisma.user.findUnique({
     where: {
@@ -11,4 +12,18 @@ export const getProducts = async (req, res) => {
   });
 
   res.json({ data: user.products });
+};
+
+// Get one product
+export const getOneProduct = async (req, res) => {
+  const id = req.params.id;
+
+  const product = await prisma.product.findUnique({
+    where: {
+      id,
+      belongsTo: req.user.id,
+    },
+  });
+
+  res.json({ data: product });
 };
