@@ -32,7 +32,15 @@ router.delete("/product/:id", () => {});
 router.get("/update", () => {});
 router.get("/update/:id", () => {});
 router.post("/update", () => {});
-router.put("/update/:id", () => {});
+router.put(
+  "/update/:id",
+  body("title").optional,
+  body("body").optional,
+  body("status").optional,
+  body("version"),
+  asset(),
+  () => {}
+);
 router.delete("/update/:id", () => {});
 
 /**
