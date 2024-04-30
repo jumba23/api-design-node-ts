@@ -1,7 +1,12 @@
 import { Router } from "express";
 import { body, oneOf } from "express-validator";
 import { handleInputErrors } from "./modules/middleware";
-import { createProduct, getOneProduct, getProducts } from "./handlers/products";
+import {
+  createProduct,
+  deleteProduct,
+  getOneProduct,
+  getProducts,
+} from "./handlers/products";
 import { create } from "domain";
 
 const router = Router();
@@ -25,7 +30,7 @@ router.put(
   handleInputErrors,
   (req, res) => {}
 );
-router.delete("/product/:id", () => {});
+router.delete("/product/:id", deleteProduct);
 
 /**
  * Update
