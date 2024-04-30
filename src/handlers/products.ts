@@ -44,8 +44,14 @@ export const createProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   const update = await prisma.product.update({
     where: {
-      id: req.params.id,
-      belongsToId: req.user.id,
+      //   id: req.params.id,
+      //   belongsToId: req.user.id,
+
+      // after adding @@unique([id, belongsToId]) to the schema.prisma file
+      id_belongsToId: {
+        id: req.params.id,
+        belongsToId: req.user.id,
+      },
     },
     data: {
       name: req.body.name,
