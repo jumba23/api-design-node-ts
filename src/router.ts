@@ -35,10 +35,10 @@ router.get("/update/:id", () => {});
 router.post("/update", () => {});
 router.put(
   "/update/:id",
-  body("title").optional,
-  body("body").optional,
+  body("title").optional(),
+  body("body").optional(),
   oneOf([body("IN_PROGRESS"), body("SHIPPED"), body("DEPRECATED")]),
-  body("version").optional,
+  body("version").optional(),
 
   () => {}
 );
