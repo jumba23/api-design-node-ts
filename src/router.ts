@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { body } from "express-validator";
+import { body, oneOf } from "express-validator";
 import { handleInputErrors } from "./modules/middleware";
 
 const router = Router();
@@ -37,7 +37,7 @@ router.put(
   "/update/:id",
   body("title").optional,
   body("body").optional,
-  body("status").optional,
+  oneOf([body("IN_PROGRESS")]),
   body("version").optional,
 
   () => {}
