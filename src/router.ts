@@ -54,7 +54,13 @@ router.delete("/update/:id", () => {});
  */
 router.get("/updatepoint", () => {});
 router.get("/updatepoint/:id", () => {});
-router.post("/updatepoint", () => {});
+router.post(
+  "/updatepoint",
+  body("name").isString(),
+  body("description").isString(),
+  body("updateId").exists().isString(),
+  () => {}
+);
 router.put(
   "/updatepoint/:id",
   body("name").optional().isString(),
