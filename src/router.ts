@@ -34,10 +34,8 @@ router.get("/update", () => {});
 router.get("/update/:id", () => {});
 router.post(
   "/update",
-  body("title").optional(),
-  body("body").optional(),
-  oneOf("status", [body("IN_PROGRESS"), body("SHIPPED"), body("DEPRECATED")]),
-  body("version").optional(),
+  body("title").exists().isString(),
+  body("body").exists().isString(),
   () => {}
 );
 router.put(
