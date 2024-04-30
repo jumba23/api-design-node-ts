@@ -21,7 +21,7 @@ export const getOneProduct = async (req, res) => {
   const product = await prisma.product.findUnique({
     where: {
       id,
-      belongsTo: req.user.id,
+      belongsToId: req.user.id,
     },
   });
 
